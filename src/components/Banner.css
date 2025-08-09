@@ -1,0 +1,375 @@
+.banner {
+  position: relative;
+  height: 80vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 70px;
+}
+
+.banner__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.1);
+  transition: transform 20s ease-out;
+}
+
+.banner:hover .banner__background {
+  transform: scale(1.05);
+}
+
+.banner__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(20,20,20,0.8) 0%,
+    rgba(20,20,20,0.6) 30%,
+    rgba(20,20,20,0.4) 50%,
+    transparent 100%
+  );
+}
+
+.banner__content {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.banner__info {
+  max-width: 600px;
+  animation: fadeIn 1s ease-out;
+}
+
+.banner__badge {
+  margin-bottom: 16px;
+}
+
+.netflix-original {
+  background: var(--gradient-primary);
+  color: var(--netflix-white);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  box-shadow: var(--shadow-md);
+}
+
+.banner__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+  margin-bottom: 8px;
+  color: var(--netflix-white);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+  position: relative;
+  display: inline-block;
+  line-height: 1.1;
+}
+
+.title-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--netflix-red), transparent);
+  opacity: 0;
+  filter: blur(20px);
+  transition: opacity var(--transition-slow);
+  z-index: -1;
+}
+
+.banner:hover .title-glow {
+  opacity: 0.3;
+}
+
+.banner__tagline {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--netflix-light-gray);
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.banner__meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.meta-item.rating {
+  color: #46d369;
+}
+
+.meta-item.year {
+  color: var(--netflix-white);
+}
+
+.meta-item.maturity {
+  background: rgba(255,255,255,0.2);
+  color: var(--netflix-white);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.meta-item.duration {
+  color: var(--netflix-light-gray);
+}
+
+.banner__genres {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.genre-tag {
+  background: var(--gradient-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--netflix-white);
+  padding: 6px 12px;
+  border-radius: var(--radius-lg);
+  font-size: 12px;
+  font-weight: 500;
+  transition: all var(--transition-normal);
+}
+
+.genre-tag:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-1px);
+}
+
+.banner__overview {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--netflix-white);
+  margin-bottom: 32px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+  max-width: 500px;
+}
+
+.banner__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.banner__play {
+  font-size: 16px;
+  padding: 14px 32px;
+  font-weight: 700;
+  box-shadow: var(--shadow-lg);
+}
+
+.banner__play:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+.banner__info {
+  font-size: 16px;
+  padding: 14px 32px;
+  font-weight: 600;
+}
+
+.banner__secondary-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: 8px;
+}
+
+.action-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.5);
+  background: rgba(42,42,42,0.8);
+  backdrop-filter: blur(10px);
+  color: var(--netflix-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.action-btn:hover {
+  border-color: var(--netflix-white);
+  background: rgba(42,42,42,1);
+  transform: scale(1.1);
+}
+
+.banner__age-rating {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}
+
+.age-rating {
+  background: rgba(0,0,0,0.8);
+  color: var(--netflix-white);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+.banner__fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(transparent, var(--netflix-black));
+  z-index: 1;
+}
+
+/* Loading State */
+.banner--loading {
+  background: var(--netflix-dark-gray);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 24px;
+}
+
+.banner__skeleton {
+  max-width: 600px;
+  width: 100%;
+}
+
+.skeleton {
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+}
+
+.skeleton--title {
+  height: 60px;
+  width: 80%;
+}
+
+.skeleton--text {
+  height: 20px;
+  width: 100%;
+}
+
+.skeleton--text:last-of-type {
+  width: 60%;
+}
+
+.skeleton--buttons {
+  height: 50px;
+  width: 300px;
+  margin-top: 32px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .banner {
+    height: 70vh;
+    min-height: 500px;
+  }
+  
+  .banner__content {
+    padding: 0 20px;
+  }
+  
+  .banner__info {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 60vh;
+    min-height: 400px;
+    margin-top: 60px;
+  }
+  
+  .banner__content {
+    padding: 0 16px;
+  }
+  
+  .banner__title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  
+  .banner__overview {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+  
+  .banner__actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .banner__secondary-actions {
+    margin-left: 0;
+  }
+  
+  .banner__play,
+  .banner__info {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+  
+  .banner__age-rating {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner__meta {
+    gap: 12px;
+  }
+  
+  .banner__genres {
+    gap: 6px;
+  }
+  
+  .genre-tag {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+  
+  .action-btn {
+    width: 40px;
+    height: 40px;
+  }
+}

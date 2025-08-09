@@ -1,0 +1,126 @@
+.movie-card {
+  position: relative;
+  min-width: 200px;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  z-index: 100;
+}
+
+.movie-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.movie-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.movie-card__buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.movie-card__button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.movie-card__button--play {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.movie-card__button--play:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.movie-card__button--add,
+.movie-card__button--like,
+.movie-card__button--info {
+  background-color: rgba(42, 42, 42, 0.8);
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.movie-card__button--add:hover,
+.movie-card__button--like:hover,
+.movie-card__button--info:hover {
+  border-color: #ffffff;
+  background-color: rgba(42, 42, 42, 1);
+}
+
+.movie-card__title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #ffffff;
+}
+
+.movie-card__details {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.movie-card__rating {
+  color: #46d369;
+  font-weight: 600;
+}
+
+.movie-card__year {
+  color: #b3b3b3;
+}
+
+.movie-card__overview {
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: #b3b3b3;
+}
+
+@media (max-width: 768px) {
+  .movie-card {
+    min-width: 150px;
+    height: 225px;
+  }
+  
+  .movie-card__overlay {
+    padding: 0.5rem;
+  }
+  
+  .movie-card__title {
+    font-size: 0.8rem;
+  }
+  
+  .movie-card__overview {
+    display: none;
+  }
+}

@@ -1,0 +1,8 @@
+.home {
+  background-color: #141414;
+  min-height: 100vh;
+}
+
+.home__content {
+  padding-bottom: 2rem;
+}
